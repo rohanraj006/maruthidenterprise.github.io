@@ -93,7 +93,7 @@
 </head>
 <body>
   <div class="header">
-    <img src="images/logo.png" alt="Logo">
+    <img src={{ url_for('static', filename='logo.png') }} alt="Logo">
     <h1> MARUTHI D ENTERPRISES </h1>
   </div>
   <div class="container">
@@ -103,7 +103,7 @@
         Home Security
       </a>
       <a href="/utility" class="button">
-        <img src="images/utilities.png" alt="Utilities">
+        <img src={{ url_for('static', filename='utilities.png') }} alt="Utilities">
         Home Utility
       </a>
     </div>

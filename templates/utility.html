@@ -77,8 +77,8 @@
 
     /* Specific sizes for each button image */
     .water-level-controller img {
-      width: 180px; /* Image width for Water Level Controller */
-      height: 120px; /* Image height for Water Level Controller */
+      width: 200px; /* Image width for Water Level Controller */
+      height: 150px; /* Image height for Water Level Controller */
     }
 
     .ups-invertor img {
@@ -88,7 +88,7 @@
 
     /* Hover effect for buttons */
     .button:hover {
-      background-color: DarkGrey; /* Change to dark grey on hover */
+      background-color: rgb(62, 60, 60); /* Change to dark grey on hover */
       transform: scale(1.05); /* Slightly enlarge the button */
     }
 
@@ -105,11 +105,11 @@
   <div class="container">
     <div class="row">
       <a href="#" class="button water-level-controller">
-        <img src="images/water leveler.avif" alt="Water Level Controller">
+        <img src={{ url_for('static', filename='waterleveler.avif') }} alt="water level Controller">
         Water Level Controller
       </a>
       <a href="#" class="button ups-invertor">
-        <img src="ups.png" alt="ups & Invertor">
+        <img src={{ url_for('static', filename='ups.png') }} alt="Ups & invertor">
         UPS & Invertor
       </a>
     </div>
