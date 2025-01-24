@@ -9,7 +9,7 @@ def home():
     return render_template('home.html')
 
 # Route for the security page
-@app.route('/about')
+@app.route('/security')
 def security():
     return render_template('security.html')
 
