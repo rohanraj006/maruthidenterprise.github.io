@@ -1,1 +1,96 @@
 <h2> utility </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilities</title>
+  <style>
+    /* General styling for the entire page */
+    body {
+      font-family: Times New Roman, sans-serif; /* Set the font for the page */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+      display: flex; /* Use flexbox to center content */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      height: 100vh; /* Set the height to fill the viewport */
+      background-color: #f4f4f9; /* Light background color */
+    }
+
+    /* Container for the buttons */
+    .container {
+      display: flex; /* Flex container */
+      flex-direction: column; /* Stack rows vertically */
+      align-items: center; /* Center rows horizontally */
+    }
+
+    /* Styling for each row of buttons */
+    .row {
+      display: flex; /* Display buttons in a row */
+      justify-content: center; /* Center the buttons */
+      margin-bottom: 10px; /* Space below each row */
+    }
+
+    /* Styling for individual buttons */
+    .button {
+      display: inline-block; /* Inline-block for proper spacing */
+      margin: 15px; /* Increase space around each button */
+      padding: 20px 40px; /* Increase button padding */
+      font-size: 20px; /* Increase font size for text */
+      font-weight: bold; /* Bold text */
+      color: white; /* Text color */
+      background-color: LightGrey; /* Default button color */
+      border: none; /* Remove border */
+      border-radius: 8px; /* Rounded corners */
+      text-decoration: none; /* Remove underline */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: transform 0.2s, background-color 0.6s; /* Smooth hover effects */
+      text-align: center; /* Center text and image */
+    }
+
+    /* Styling for images inside buttons */
+    .button img {
+      display: block; /* Block-level for centering */
+      margin: 0 auto 10px; /* Center the image and add space below it */
+    }
+
+    /* Specific sizes for each button image */
+    .water-level-controller img {
+      width: 150px; /* Image width for Water Level Controller */
+      height: 100px; /* Image height for Water Level Controller */
+    }
+
+    .ups-invertor img {
+      width: 150px; /* Image width for UPS & Invertor */
+      height: 100px; /* Image height for UPS & Invertor */
+    }
+
+    /* Hover effect for buttons */
+    .button:hover {
+      background-color: DarkGrey; /* Change to dark grey on hover */
+      transform: scale(1.05); /* Slightly enlarge the button */
+    }
+
+    /* Active effect for buttons (on click) */
+    .button:active {
+      transform: scale(0.95); /* Shrink slightly when clicked */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Row of buttons -->
+    <div class="row">
+      <a href="#" class="button water-level-controller">
+        <img src="water leveler.avif" alt="Water Level Controller">
+        Water Level Controller
+      </a>
+      <a href="#" class="button ups-invertor">
+        <img src="ups.webp" alt="UPS & Invertor">
+        UPS & Invertor
+      </a>
+    </div>
+  </div>
+</body>
+</html>
