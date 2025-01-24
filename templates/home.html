@@ -17,15 +17,35 @@
       background-color: #f4f4f9;
     }
 
+    .header img {
+      width: 70px;
+      height: auto;
+      align-items: center;
+      margin-top: 0;
+      padding-bottom: 5px;
+    }
+
     h1 {
         text-align: center;
-        margin-top: 0; 
+        margin-top: 90px; 
         padding: 20px 0;    
         position: absolute; 
         top: 0;             
         width: 100%; 
     }
-    
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      padding: 20px 0;
+      gap: 15px;
+    }
+
     .container {
       display: flex;
       flex-direction: column;
@@ -62,7 +82,7 @@
     }
 
     .button:hover {
-      background-color: Black;
+      background-color: rgb(27, 26, 26);
       transform: scale(1.05);
     }
 
@@ -72,7 +92,10 @@
   </style>
 </head>
 <body>
+  <div class="header">
+    <img src="logo.png" alt="Logo">
     <h1> MARUTHI D ENTERPRISES </h1>
+  </div>
   <div class="container">
     <div class="row">
       <a href="/security" class="button">
