@@ -1,4 +1,3 @@
-<h2> utility </h2>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,27 @@
       align-items: center; /* Center content vertically */
       height: 100vh; /* Set the height to fill the viewport */
       background-color: #f4f4f9; /* Light background color */
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 50px; 
+        padding: 20px 0;    
+        position: absolute; 
+        top: 0;             
+        width: 100%; 
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      padding: 20px 0;
+      gap: 15px;
     }
 
     /* Container for the buttons */
@@ -79,8 +99,10 @@
   </style>
 </head>
 <body>
+  <div class="header">
+    <h2>Utility</h2>
+  </div>
   <div class="container">
-    <!-- Row of buttons -->
     <div class="row">
       <a href="#" class="button water-level-controller">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLM8_uSFlB7OvUhVZPJIqgspD4_FkF1HowDepuog63u9XUr8cpHeriI6JHBg7QujG03ro&usqp=CAU" alt="Water Level Controller">
