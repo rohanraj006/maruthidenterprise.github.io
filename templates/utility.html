@@ -3,105 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utilities</title>
+  <title>utilities</title>
   <style>
-    /* General styling for the entire page */
-    body {
-      font-family: Times New Roman, sans-serif; /* Set the font for the page */
-      margin: 0; /* Remove default margin */
-      padding: 0; /* Remove default padding */
-      display: flex; /* Use flexbox to center content */
-      justify-content: center; /* Center content horizontally */
-      align-items: center; /* Center content vertically */
-      height: 100vh; /* Set the height to fill the viewport */
-      background-color: #f4f4f9; /* Light background color */
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-    h1 {
-        text-align: center;
-        margin-top: 50px; 
-        padding: 20px 0;    
-        position: absolute; 
-        top: 0;             
-        width: 100%; 
+    body {
+      font-family: 'Bebas Neue', cursive;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #222629;
+      
     }
 
     .header {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0px;
+      top: 0;
       width: 100%;
       padding: 20px 0;
-      gap: 15px;
+      background-color: #222629;
+      color: #fff;
+      z-index: 1000;
     }
 
-    /* Container for the buttons */
+    .header img {
+      width: 50px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 50px;
+      font-weight: 500;
+      
+    }
+
     .container {
-      display: flex; /* Flex container */
-      flex-direction: column; /* Stack rows vertically */
-      align-items: center; /* Center rows horizontally */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 150px;
     }
 
-    /* Styling for each row of buttons */
     .row {
-      display: flex; /* Display buttons in a row */
-      justify-content: center; /* Center the buttons */
-      margin-bottom: 10px; /* Space below each row */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
-    /* Styling for individual buttons */
     .button {
-      display: inline-block; /* Inline-block for proper spacing */
-      margin: 15px; /* Increase space around each button */
-      padding: 20px 40px; /* Increase button padding */
-      font-size: 20px; /* Increase font size for text */
-      font-weight: bold; /* Bold text */
-      color: white; /* Text color */
-      background-color: LightGrey; /* Default button color */
-      border: none; /* Remove border */
-      border-radius: 8px; /* Rounded corners */
-      text-decoration: none; /* Remove underline */
-      cursor: pointer; /* Pointer cursor on hover */
-      transition: transform 0.2s, background-color 0.6s; /* Smooth hover effects */
-      text-align: center; /* Center text and image */
+      display: inline-block;
+      margin: 15px;
+      padding: 20px 40px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #222629;
+      background-color: #86c232;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 1s, background-color 0.3s;
+      text-align: center;
+      width: 300px;
     }
 
-    /* Styling for images inside buttons */
     .button img {
-      display: block; /* Block-level for centering */
-      margin: 0 auto 10px; /* Center the image and add space below it */
+      display: block;
+      margin: 0 auto 10px;
+      width: 240px;
+      height: 160px;
+      border-radius: 8px;
     }
 
-    /* Specific sizes for each button image */
-    .water-level-controller img {
-      width: 200px; /* Image width for Water Level Controller */
-      height: 150px; /* Image height for Water Level Controller */
-    }
-
-    .ups-invertor img {
-      width: 200px; /* Image width for UPS & Invertor */
-      height: 150px; /* Image height for UPS & Invertor */
-    }
-
-    /* Hover effect for buttons */
     .button:hover {
-      background-color: rgb(62, 60, 60); /* Change to dark grey on hover */
-      transform: scale(1.05); /* Slightly enlarge the button */
+      background-color: #61892f;
+      transform: scale(1.05);
     }
 
-    /* Active effect for buttons (on click) */
     .button:active {
-      transform: scale(0.95); /* Shrink slightly when clicked */
+      transform: scale(0.95);
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      height: 100vh;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #6b6e70;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1001;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #474b4f; /*inside*/
+    }
+
+    .dropdown {
+      padding: 10px 15px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .dropdown:hover {
+      background-color: #474b4f;
+    }
+
+    .dropdown-content {
+      display: none;
+      background-color: #474b4f;
+      padding-left: 20px;
+    }
+
+    .dropdown-content a {
+      font-size: 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .overlay {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h2>Utility</h2>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+      <a href="/security">Security</a>
+      <div class="dropdown-content">
+        <a href="/security/cctv">CCTV</a>
+        <a href="/security/access-control">Access Control</a>
+        <a href="/security/video-door-com">Video Door Com</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/utility">Utility</a>
+      <div class="dropdown-content">
+        <a href="/utility/ups">UPS</a>
+        <a href="/utility/water-level">Water Level</a>
+        <a href="/utility/rope-cloth-hanger">Rope Cloth Hanger</a>
+      </div>
+    </div>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact</a>
   </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    <h1>MARUTHI D ENTERPRISES</h1>
+  </div>
+  <h2 style="text-align: center;">  Utilities </h2>
+  <!-- Main Content -->
   <div class="container">
     <div class="row">
       <a href="#" class="button water-level-controller">
@@ -113,6 +209,24 @@
         UPS & Invertor
       </a>
     </div>
-  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.width = '250px';
+        overlay.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar when the overlay is clicked
+    document.getElementById('overlay').onclick = function () {
+      toggleSidebar();
+    };
+  </script>
 </body>
 </html>

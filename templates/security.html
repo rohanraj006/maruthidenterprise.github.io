@@ -3,89 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security</title>
+  <title>utilities</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
     body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
+      font-family: 'Bebas Neue', cursive;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
-      background-color: #f4f4f9;
-    }
-
-    h1 {
-        text-align: center;
-        margin-top: 50px; 
-        padding: 20px 0;    
-        position: absolute; 
-        top: 0;             
-        width: 100%; 
+      background-color: #222629;
+      
     }
 
     .header {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0px;
+      top: 0;
       width: 100%;
       padding: 20px 0;
-      gap: 15px;
+      background-color: #222629;
+      color: #fff;
+      z-index: 1000;
+    }
+
+    .header img {
+      width: 50px;
+      height: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 50px;
+      font-weight: 500;
+      
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 150px;
     }
 
     .row {
       display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .button {
       display: inline-block;
       margin: 15px;
       padding: 20px 40px;
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      background-color: LightGrey;
+      font-size: 20px;
+      font-weight: 500;
+      color: #222629;
+      background-color: #86c232;
       border: none;
       border-radius: 8px;
       text-decoration: none;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.3s;
+      transition: transform 1s, background-color 0.3s;
       text-align: center;
+      width: 300px;
     }
 
     .button img {
       display: block;
       margin: 0 auto 10px;
-      width: 280px;
+      width: 240px;
       height: 160px;
+      border-radius: 8px;
     }
 
     .button:hover {
-      background-color: rgb(68, 66, 66);
+      background-color: #61892f;
       transform: scale(1.05);
     }
 
     .button:active {
       transform: scale(0.95);
     }
+
+    /* Sidebar styles */
+    .sidebar {
+      height: 100vh;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #6b6e70;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1001;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #474b4f; /*inside*/
+    }
+
+    .dropdown {
+      padding: 10px 15px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .dropdown:hover {
+      background-color: #474b4f;
+    }
+
+    .dropdown-content {
+      display: none;
+      background-color: #474b4f;
+      padding-left: 20px;
+    }
+
+    .dropdown-content a {
+      font-size: 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .overlay {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h2>Security Systems</h2>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+      <a href="/security">Security</a>
+      <div class="dropdown-content">
+        <a href="/security/cctv">CCTV</a>
+        <a href="/security/access-control">Access Control</a>
+        <a href="/security/video-door-com">Video Door Com</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/utility">Utility</a>
+      <div class="dropdown-content">
+        <a href="/utility/ups">UPS</a>
+        <a href="/utility/water-level">Water Level</a>
+        <a href="/utility/rope-cloth-hanger">Rope Cloth Hanger</a>
+      </div>
+    </div>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact</a>
   </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <span class="hamburger" onclick="toggleSidebar()">☰</span>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    <h1>MARUTHI D ENTERPRISES</h1>
+  </div>
+  <h2 style="text-align: center;">  Home security </h2>
+  <!-- Main Content -->
   <div class="container">
     <div class="row">
       <a href="#" class="button">
@@ -104,5 +216,24 @@
       </a>
     </div>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.width = '250px';
+        overlay.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar when the overlay is clicked
+    document.getElementById('overlay').onclick = function () {
+      toggleSidebar();
+    };
+  </script>
 </body>
 </html>
