@@ -29,8 +29,9 @@
     }
 
     .header img {
-      width: 50px;
+      width: 80px;
       height: auto;
+      border-radius: 8px;
     }
 
     h1 {
@@ -44,18 +45,25 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 150px;
+      margin-top: 120px;
     }
 
-    .row {
+    .main-image {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 20px;
     }
 
     .button {
-      display: inline-block;
+      display: block;
       padding: 20px;
       font-size: 20px;
       font-weight: 500;
@@ -68,14 +76,6 @@
       transition: transform 1s, background-color 0.3s;
       text-align: center;
       width: 300px;
-    }
-
-    .button img {
-      display: block;
-      margin: 0 auto;
-      width: 240px;
-      height: 160px;
-      border-radius: 8px;
     }
 
     .button:hover {
@@ -114,31 +114,6 @@
       background-color: #474b4f;
     }
 
-    .dropdown {
-      padding: 10px 15px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .dropdown:hover {
-      background-color: #474b4f;
-    }
-
-    .dropdown-content {
-      display: none;
-      background-color: #474b4f;
-      padding-left: 20px;
-    }
-
-    .dropdown-content a {
-      font-size: 16px;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Hamburger menu styles */
     .hamburger {
       position: absolute;
       top: 30px;
@@ -160,11 +135,6 @@
     }
 
     @media (max-width: 768px) {
-      .row {
-        flex-direction: column;
-        align-items: center;
-      }
-
       .button {
         width: 90%;
         max-width: 300px;
@@ -187,7 +157,8 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
-    <a href="utilities.html">Utilities</a>  <!-- Changed from "Controllers" to "Utilities" -->
+    <a href="security.html">Security</a> <!-- Moved Security above Utilities -->
+    <a href="utilities.html">Utilities</a>
     <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -202,23 +173,18 @@
     <h1>MARUTHI D ENTERPRISES</h1>
   </div>
 
-  <h2 style="text-align: center;">Utilities</h2>
+  <h2 style="text-align: center; margin-top: 80px;">Utilities</h2>
 
   <!-- Main Content -->
   <div class="container">
-    <div class="row">
-      <a href="sump_controller.html" class="button">
-        <img src="static/sump_controller.jpg" alt="Sump Controller">
-        <br>Sump Controller
-      </a>
-      <a href="bore_controller.html" class="button">
-        <img src="static/bore_controller.jpg" alt="Bore Controller">
-        <br>Bore Controller
-      </a>
-      <a href="both_controllers.html" class="button">
-        <img src="static/both_controllers.jpg" alt="Both Controllers">
-        <br>Both Sump & Bore Controller
-      </a>
+    <!-- Main Image -->
+    <img src="static/waterleveler.jpgs" alt="Main Utility Image" class="main-image">
+
+    <!-- Buttons in a column -->
+    <div class="button-container">
+      <a href="sump_controller.html" class="button">Sump Controller</a>
+      <a href="bore_controller.html" class="button">Bore Controller</a>
+      <a href="both_controllers.html" class="button">Both Sump & Bore Controller</a>
     </div>
   </div>
 
