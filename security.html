@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>utilities</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
@@ -68,7 +68,7 @@
       border-radius: 8px;
       text-decoration: none;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.3s;
+      transition: transform 1s, background-color 0.3s;
       text-align: center;
       width: 300px;
     }
@@ -166,25 +166,25 @@
 <body>
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="/">Home</a>
+    <a href="index.html">Home</a>
     <div class="dropdown">
-      <a href="/security">Security</a>
+      <a href="security.html">Security</a>
       <div class="dropdown-content">
-        <a href="/security/cctv">CCTV</a>
-        <a href="/security/access-control">Access Control</a>
-        <a href="/security/video-door-com">Video Door Com</a>
+        <a href="cctv.html">CCTV</a>
+        <a href="access_control.html">Access Control</a>
+        <a href="video_door_com.html">Video Door Com</a>
       </div>
     </div>
     <div class="dropdown">
-      <a href="/utility">Utility</a>
+      <a href="utility.html">Utility</a>
       <div class="dropdown-content">
-        <a href="/utility/ups">UPS</a>
-        <a href="/utility/water-level">Water Level</a>
-        <a href="/utility/rope-cloth-hanger">Rope Cloth Hanger</a>
+        <a href="ups.html">UPS</a>
+        <a href="water_level.html">Water Level</a>
+        <a href="rope_cloth_hanger.html">Rope Cloth Hanger</a>
       </div>
     </div>
-    <a href="/about">About Us</a>
-    <a href="/contact">Contact</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
   </div>
 
   <!-- Overlay -->
@@ -193,20 +193,26 @@
   <!-- Header -->
   <div class="header">
     <span class="hamburger" onclick="toggleSidebar()">☰</span>
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    <img src="static/logo.png" alt="Logo">
     <h1>MARUTHI D ENTERPRISES</h1>
   </div>
-
+  <h2 style="text-align: center;">  Home security </h2>
   <!-- Main Content -->
   <div class="container">
     <div class="row">
-      <a href="/security" class="button">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHnXxRpFa4fxKzyGn85icIgRTUhdGL7nI1gw&s" alt="Home Security">
-        Home Security
+      <a href="cctv.html" class="button">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHnXxRpFa4fxKzyGn85icIgRTUhdGL7nI1gw&s" alt="CCTV Camera">
+        CCTV Camera
       </a>
-      <a href="/utility" class="button">
-        <img src="{{ url_for('static', filename='utilities.png') }}" alt="Utilities">
-        Home Utility
+      <a href="access_control.html" class="button">
+        <img src="https://blog.koorsen.com/hs-fs/hubfs/Door_Access_Control.jpg?width=1200&height=769&name=Door_Access_Control.jpg" alt="Access Control">
+        Access Control
+      </a>
+    </div>
+    <div class="row">
+      <a href="video_door_com.html" class="button">
+        <img src="https://images-cdn.ubuy.co.in/65129072fc090f63c92fc522-woliliwo-video-intercom-system-7-inch.jpg" alt="Video Door Phone">
+        Video Door Phone
       </a>
     </div>
   </div>
